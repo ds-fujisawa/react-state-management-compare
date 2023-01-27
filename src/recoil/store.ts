@@ -1,7 +1,6 @@
-import { atom } from "recoil";
-
+import { atom } from 'recoil';
 
 export const todosAtom = atom<string[]>({
-  key: "todos",
+  key: 'todos',
   default: [],
 });

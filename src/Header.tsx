@@ -7,6 +7,7 @@ const pageLink = [
   { name: 'Recoil', to: '/recoil' },
   { name: 'Jotai', to: '/jotai' },
   { name: 'Zustand', to: '/zustand' },
+  { name: 'Swr', to: '/swr' },
 ];
 
 const Header = () => {

@@ -1,16 +1,13 @@
-import { useCallback, useRef } from 'react';
 import { useAtom } from 'jotai';
+import { useCallback, useRef } from 'react';
 import { todosAtom } from './store';
 
 const Todo = () => {
   const inputEl = useRef<HTMLInputElement>(null);
   const [todos, setTodos] = useAtom(todosAtom);
   const addTodoHandler = useCallback(() => {
-    if (
-      inputEl.current?.value &&
-      !todos.includes(inputEl.current.value)
-    ) {
-      setTodos([...todos, inputEl.current.value ]);
+    if (inputEl.current?.value && !todos.includes(inputEl.current.value)) {
+      setTodos([...todos, inputEl.current.value]);
       inputEl.current.value = '';
     }
   }, [todos]);
@@ -33,9 +30,7 @@ const Todo = () => {
         ))}
       </ul>
       <input type="text" ref={inputEl} />
-      <button onClick={addTodoHandler}>
-        Add
-      </button>
+      <button onClick={addTodoHandler}>Add</button>
     </>
   );
 };

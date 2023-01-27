@@ -5,10 +5,7 @@ const Todo = () => {
   const inputEl = useRef<HTMLInputElement>(null);
   const { todos, addTodo, delTodo } = useStore();
   const addTodoHandler = useCallback(() => {
-    if (
-      inputEl.current?.value &&
-      !todos.includes(inputEl.current.value)
-    ) {
+    if (inputEl.current?.value && !todos.includes(inputEl.current.value)) {
       addTodo(inputEl.current.value);
       inputEl.current.value = '';
     }
@@ -32,9 +29,7 @@ const Todo = () => {
         ))}
       </ul>
       <input type="text" ref={inputEl} />
-      <button onClick={addTodoHandler}>
-        Add
-      </button>
+      <button onClick={addTodoHandler}>Add</button>
     </>
   );
 };

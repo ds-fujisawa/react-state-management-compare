@@ -1,5 +1,5 @@
-import Todo from './Todo';
 import { RecoilRoot } from 'recoil';
+import Todo from './Todo';
 
 const App = () => (
   <RecoilRoot>

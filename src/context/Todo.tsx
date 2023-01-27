@@ -8,10 +8,7 @@ const Todo = () => {
     state: { todos },
   } = useContext(Store)!;
   const addTodoHandler = useCallback(() => {
-    if (
-      inputEl.current?.value &&
-      !todos.includes(inputEl.current.value)
-    ) {
+    if (inputEl.current?.value && !todos.includes(inputEl.current.value)) {
       dispatch({ type: 'ADD_TODO', payload: inputEl.current.value });
       inputEl.current.value = '';
     }
@@ -35,9 +32,7 @@ const Todo = () => {
         ))}
       </ul>
       <input type="text" ref={inputEl} />
-      <button onClick={addTodoHandler}>
-        Add
-      </button>
+      <button onClick={addTodoHandler}>Add</button>
     </>
   );
 };
