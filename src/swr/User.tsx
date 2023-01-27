@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react';
 import useSWR, { mutate } from 'swr';
 import useSWRMutation from 'swr/mutation';
 import Loading from '../Loading';
-import { userFetcher, generateShortId } from '../utils';
+import { generateShortId, userFetcher } from './store';
 
 const User = () => {
   const inputEl = useRef<HTMLInputElement>(null);

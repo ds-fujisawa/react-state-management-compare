@@ -1,5 +1,5 @@
 import { rest, setupWorker } from 'msw';
-import { generateShortId } from '../src/utils';
+import { generateShortId } from '../src/swr/store';
 
 const handlers = [
   rest.get('/user', (_, res, ctx) =>

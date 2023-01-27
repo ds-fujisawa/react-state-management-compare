@@ -1,12 +1,9 @@
 import { useCallback, useRef } from 'react';
-import { useSWRConfig } from 'swr';
 import { useSWRTodos } from './store';
 
 const Todo = () => {
   const inputEl = useRef<HTMLInputElement>(null);
   const [todos, setTodos] = useSWRTodos();
-  const { cache } = useSWRConfig();
-  console.log(cache.get('/user'));
   const addTodoHandler = useCallback(() => {
     if (inputEl.current?.value && !todos.includes(inputEl.current.value)) {
       setTodos([...todos, inputEl.current.value]);
